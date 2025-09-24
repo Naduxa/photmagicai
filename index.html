@@ -9,10 +9,28 @@
   <meta property="og:description" content="Улучшение фото, PRO-правки, оживление, генерация по тексту.">
   <meta property="og:type" content="website">
   <style>
-    :root{--bg:#0b0b0f;--fg:#f3f4f6;--muted:#a3a3a3;--card:#111217;--btn:#2563eb;--btn2:#10b981}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:linear-gradient(180deg,#0b0b0f, #14151d);}
+    :root{
+      --bg:#f8fafc;       /* светлый фон */
+      --fg:#1f2937;       /* основной текст */
+      --muted:#4b5563;    /* приглушённый текст */
+      --card:#ffffff;     /* карточка */
+      --btn:#2563eb;      /* синяя кнопка */
+      --btn2:#10b981;     /* зелёная кнопка */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      background:var(--bg);
+    }
     .wrap{max-width:920px;margin:0 auto;padding:40px 20px}
-    .card{background:var(--card);border:1px solid #1f2330;border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .card{
+      background:var(--card);
+      border:1px solid #e5e7eb;
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+    }
     h1{color:var(--fg);font-size:32px;margin:0 0 8px}
     p{color:var(--muted);line-height:1.6}
     .grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0 28px}
@@ -22,9 +40,9 @@
     a.primary{background:var(--btn)}
     a.secondary{background:var(--btn2)}
     .legal{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
-    .legal a{color:#93c5fd;text-decoration:none}
+    .legal a{color:#2563eb;text-decoration:none}
     .footer{margin-top:28px;color:#6b7280;font-size:14px}
-    .badge{display:inline-block;padding:2px 8px;border:1px solid #2a2e3d;border-radius:999px;color:#9ca3af;font-size:12px;margin-top:6px}
+    .badge{display:inline-block;padding:2px 8px;border:1px solid #d1d5db;border-radius:999px;color:#6b7280;font-size:12px;margin-top:6px}
     .title{display:flex;align-items:center;gap:10px}
   </style>
 </head>
