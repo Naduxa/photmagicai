@@ -90,26 +90,61 @@
     </div>
     <div class="relative">
       <div class="glass rounded-3xl p-3 md:p-4 shadow-glow">
-        <div class="relative overflow-hidden rounded-3xl shadow-glow" style="aspect-ratio: 4 / 3;">
-  <img src="before.jpg" alt="До" class="absolute inset-0 w-full h-full object-cover" />
-  <div id="sliderWrapper" class="absolute inset-0 overflow-hidden" style="width:50%;">
-    <img src="after.gif" alt="После" class="w-full h-full object-cover" />
+        <!-- BEFORE/AFTER со слайдером -->
+<div id="compare" class="relative overflow-hidden rounded-3xl shadow-glow aspect-[4/3] select-none">
+  <!-- Фото ДО (статичное, снизу) -->
+  <img src="before.jpg" alt="До" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+
+  <!-- Фото ПОСЛЕ (GIF), сверху, обрезаем маской -->
+  <div id="afterMask" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+    <img src="after.gif" alt="После (ожившая гифка)" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
   </div>
-  <input id="slider" type="range" min="0" max="100" value="50"
-    class="absolute bottom-2 left-1/2 -translate-x-1/2 w-2/3 accent-[#9d7aff]">
+
+  <!-- Ползунок/перегородка -->
+  <div id="handle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
+    <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
+    <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
+  </div>
 </div>
 
 <script>
-const slider = document.getElementById('slider');
-const wrap = document.getElementById('sliderWrapper');
-slider.addEventListener('input', e => {
-  wrap.style.width = e.target.value + '%';
-});
+(function () {
+  const cmp   = document.getElementById('compare');
+  const mask  = document.getElementById('afterMask');
+  const handle= document.getElementById('handle');
+
+  function setByClientX(clientX) {
+    const r = cmp.getBoundingClientRect();
+    let p = (clientX - r.left) / r.width;         // 0..1
+    p = Math.max(0, Math.min(1, p));
+    // Маска: показываем GIF слева до ползунка
+    mask.style.clipPath = `inset(0 ${ (1 - p) * 100 }% 0 0)`;
+    handle.style.left = `${ p * 100 }%`;
+  }
+
+  function onMove(e){ setByClientX(e.touches ? e.touches[0].clientX : e.clientX); }
+
+  // Drag на всю область
+  cmp.addEventListener('pointerdown', e => {
+    cmp.setPointerCapture(e.pointerId);
+    onMove(e);
+    cmp.addEventListener('pointermove', onMove);
+  });
+  cmp.addEventListener('pointerup', e => {
+    cmp.releasePointerCapture(e.pointerId);
+    cmp.removeEventListener('pointermove', onMove);
+  });
+
+  // Старт — посередине
+  const r = cmp.getBoundingClientRect();
+  setByClientX(r.left + r.width / 2);
+  window.addEventListener('resize', () => {
+    const rr = cmp.getBoundingClientRect();
+    setByClientX(rr.left + rr.width / 2);
+  });
+})();
 </script>
 
-      </div>
-    </div>
-  </section>
 
   <!-- WOW Examples -->
   <section id="examples" class="py-16 md:py-24 bg-beige-50 border-y border-lilac-100">
