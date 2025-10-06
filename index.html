@@ -1,82 +1,73 @@
-<!doctype html>
-<html lang="ru">
+<!DOCTYPE html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="utf-8">
-  <title>Фото Магия AI — @photmagicai</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Фото Магия AI — Telegram-бот @photmagicai: улучшение фото, PRO-правки, оживление, генерация по тексту.">
-  <meta property="og:title" content="Фото Магия AI — @photmagicai">
-  <meta property="og:description" content="Улучшение фото, PRO-правки, оживление, генерация по тексту.">
-  <meta property="og:type" content="website">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фото Магия AI — оживить фото, улучшить качество, ИИ‑фотошоп, восстановить старые фото</title>
+  <meta name="description" content="Фото Магия AI — Телеграм‑бот, который оживляет фото, улучшает качество, делает ИИ‑фотошоп и восстанавливает старые фотографии. Бежево‑фиолетовый дизайн, простота и вау‑результат!" />
+  <meta name="keywords" content="оживить фото онлайн, улучшить качество фото, восстановить старые фото, реставрация фото, ИИ фотошоп, фото со звездой, анимация фото, нейросеть фото, улучшение чёткости" />
+  <link rel="canonical" href="https://naduxa.github.io/photmagicalai/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Фото Магия AI — оживить и улучшить фото онлайн" />
+  <meta property="og:description" content="Нейросеть оживляет старые фото, улучшает качество и создаёт фото со звёздами. Запусти бота — результат за минуты." />
+  <meta property="og:url" content="https://naduxa.github.io/photmagicalai/" />
+  <meta property="og:image" content="https://naduxa.github.io/photmagicalai/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Фото Магия AI — оживить и улучшить фото" />
+  <meta name="twitter:description" content="Лучшее качество за пару кликов в Telegram." />
+  <meta name="twitter:image" content="https://naduxa.github.io/photmagicalai/og-cover.jpg" />
+
+  <!-- Favicons / PWA -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            beige: { 50:'#fffaf4',100:'#fdf0e0',200:'#fbe4c9',300:'#f9d9b3' },
+            lilac: { 100:'#ede7ff',200:'#dcd2ff',300:'#c9b9ff',400:'#b49bff',500:'#9d7aff' }
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    :root{
-      --bg:#f8fafc;       /* светлый фон */
-      --fg:#1f2937;       /* основной текст */
-      --muted:#4b5563;    /* приглушённый текст */
-      --card:#ffffff;     /* карточка */
-      --btn:#2563eb;      /* синяя кнопка */
-      --btn2:#10b981;     /* зелёная кнопка */
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
-      background:var(--bg);
-    }
-    .wrap{max-width:920px;margin:0 auto;padding:40px 20px}
-    .card{
-      background:var(--card);
-      border:1px solid #e5e7eb;
-      border-radius:20px;
-      padding:28px;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-    }
-    h1{color:var(--fg);font-size:32px;margin:0 0 8px}
-    p{color:var(--muted);line-height:1.6}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin:18px 0 28px}
-    .grid b{color:var(--fg)}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-    a.btn{display:inline-block;padding:12px 16px;border-radius:12px;text-decoration:none;color:white;font-weight:600}
-    a.primary{background:var(--btn)}
-    a.secondary{background:var(--btn2)}
-    .legal{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
-    .legal a{color:#2563eb;text-decoration:none}
-    .footer{margin-top:28px;color:#6b7280;font-size:14px}
-    .badge{display:inline-block;padding:2px 8px;border:1px solid #d1d5db;border-radius:999px;color:#6b7280;font-size:12px;margin-top:6px}
-    .title{display:flex;align-items:center;gap:10px}
+    :root { --g1:#fff8f2; --g2:#f1ebff; --violet:#9d7aff; --violet2:#b49bff; --violet3:#d6c7ff; }
+    body { background: radial-gradient(1200px 600px at 80% -10%, rgba(212,191,255,.35), transparent 60%), linear-gradient(180deg, var(--g1), var(--g2)); color:#2f2343; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .glass { background: rgba(255,255,255,.6); backdrop-filter: blur(12px); border: 1px solid rgba(180,155,255,.25); }
+    .title-grad { background: linear-gradient(90deg,#b995ff,#ffb7a1); -webkit-background-clip:text; color:transparent; }
+    .btn-magic { display:inline-block; padding:.95rem 1.4rem; border-radius:1.2rem; color:white; font-weight:700; letter-spacing:.2px; background: linear-gradient(90deg,#a98bff,#c7adff); box-shadow: 0 10px 25px rgba(157,122,255,.45), inset 0 1px 0 rgba(255,255,255,.25); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+    .btn-magic:hover { transform: translateY(-2px) scale(1.02); box-shadow:0 16px 34px rgba(157,122,255,.6); filter:saturate(1.08); }
+    .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.5rem .8rem; border-radius:999px; background:rgba(180,155,255,.18); color:#4a3e6e; font-weight:600; }
+    .shadow-glow { box-shadow: 0 10px 30px rgba(157,122,255,.25); }
+    .card { border:1px solid rgba(180,155,255,.25); }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="title">
-        <h1>Фото Магия AI</h1>
-        <span class="badge">@photmagicai</span>
-      </div>
-      <p>Telegram-бот, который превращает ваши фото в яркие и профессиональные изображения.</p>
-
-      <div class="grid">
-        <p>📸 <b>Улучшает качество</b> — аккуратное повышение чёткости, света и цвета.</p>
-        <p>🚀 <b>PRO-режим</b> — делает ваше фото более продающим для товаров и портретов.</p>
-        <p>🎭 <b>Оживляет фото</b> — делает из вашего снимка видео с движениями.</p>
-        <p>🎨 <b>Текст → Картинка</b> — генерация по вашему описанию.</p>
-      </div>
-
-      <div class="cta">
-        <a class="btn primary" href="https://t.me/photmagicai">Открыть бота в Telegram</a>
-        <a class="btn secondary" href="https://t.me/photmagic">Смотреть примеры</a>
-      </div>
-
-      <div class="legal">
-        <a href="terms.html">Публичная оферта</a>
-        <a href="privacy.html">Политика конфиденциальности</a>
-        <a href="mailto:naduxa3009@gmail.com">Связаться: naduxa3009@gmail.com</a>
-      </div>
-
-      <div class="footer">
-        Исполнитель: <b>ИП Курылева Надежда Александровна</b> • ИНН 644927208311 • ОГРНИП 321645100038202
-      </div>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-lilac-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="text-xl font-extrabold title-grad">Фото Магия AI</a>
+      <nav class="hidden md:flex gap-6 text-sm text-[#635590]">
+        <a href="#examples" class="hover:text-[#2f2343]">Примеры</a>
+        <a href="#features" class="hover:text-[#2f2343]">Возможности</a>
+        <a href="#reviews" class="hover:text-[#2f2343]">Отзывы</a>
+      </nav>
+      <a href="https://t.me/photmagicbot?start=web_landing&utm_source=site&utm_medium=cta&utm_campaign=landing" class="btn-magic shadow-glow">Открыть бота</a>
     </div>
-  </div>
-</body>
-</html>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <div class="chip mb-4">💫 Оживи фото за 1–3 клика</div>
+      <h1 class="text-4xl md:text
