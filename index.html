@@ -90,7 +90,23 @@
     </div>
     <div class="relative">
       <div class="glass rounded-3xl p-3 md:p-4 shadow-glow">
-        <img src="IMG_5941-ezgif.com-optimize.gif" alt="Оживление лица — пример работы Фото Магия AI" class="rounded-2xl w-full" loading="eager" />
+        <div class="relative overflow-hidden rounded-3xl shadow-glow" style="aspect-ratio: 4 / 3;">
+  <img src="before.jpg" alt="До" class="absolute inset-0 w-full h-full object-cover" />
+  <div id="sliderWrapper" class="absolute inset-0 overflow-hidden" style="width:50%;">
+    <img src="after.gif" alt="После" class="w-full h-full object-cover" />
+  </div>
+  <input id="slider" type="range" min="0" max="100" value="50"
+    class="absolute bottom-2 left-1/2 -translate-x-1/2 w-2/3 accent-[#9d7aff]">
+</div>
+
+<script>
+const slider = document.getElementById('slider');
+const wrap = document.getElementById('sliderWrapper');
+slider.addEventListener('input', e => {
+  wrap.style.width = e.target.value + '%';
+});
+</script>
+
       </div>
     </div>
   </section>
