@@ -111,32 +111,68 @@
   </section>
 
   <!-- WOW Examples -->
-  <section id="examples" class="py-16 md:py-24 bg-beige-50 border-y border-lilac-100">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold title-grad text-center">Посмотри, как это выглядит</h2>
-      <p class="mt-3 text-center text-[#5b4d86]">Люди возвращают улыбки на старых снимках, делают чёткими размытые фото и создают кадры со звёздами.</p>
-      <div class="mt-10 grid md:grid-cols-3 gap-6">
-        <div class="glass card rounded-2xl p-3 shadow-glow">
-          <img src="ex1.jpg" alt="Улучшение качества фото — до/после" class="rounded-xl mb-3" loading="lazy" />
-          <div class="text-[#4a3e6e] font-semibold">Улучшение качества</div>
-          <div class="text-sm text-[#6a5fa0]">Чёткость, цвет, детализация — как будто снято на новую камеру.</div>
+  <!-- WOW Examples -->
+<section id="examples" class="py-16 md:py-24 bg-beige-50 border-y border-lilac-100">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-extrabold title-grad text-center">Посмотри, как это выглядит</h2>
+    <p class="mt-3 text-center text-[#5b4d86]">Люди возвращают улыбки на старых снимках, делают чёткими размытые фото и создают кадры со звёздами.</p>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      
+      <!-- A) Улучшение качества (мини-слайдер) -->
+      <div class="glass card rounded-2xl p-3 shadow-glow">
+        <div id="upscale-compare" class="relative overflow-hidden rounded-xl aspect-[4/3] select-none">
+          <img src="example-upscale-before.jpg" alt="Улучшение качества — до" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+          <div id="upscaleAfter" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+            <img src="example-upscale-after.jpg" alt="Улучшение качества — после" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+          </div>
+          <div id="upscaleHandle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
+            <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
+          </div>
         </div>
-        <div class="glass card rounded-2xl p-3 shadow-glow">
-          <img src="ex2.jpg" alt="Восстановление старого фото — реставрация и анимация" class="rounded-xl mb-3" loading="lazy" />
-          <div class="text-[#4a3e6e] font-semibold">Восстановление и оживление</div>
-          <div class="text-sm text-[#6a5fa0]">Деликатная реставрация и естественная анимация лица.</div>
-        </div>
-        <div class="glass card rounded-2xl p-3 shadow-glow">
-          <img src="ex3.jpg" alt="Фото со звездой — реалистичный совместный кадр" class="rounded-xl mb-3" loading="lazy" />
-          <div class="text-[#4a3e6e] font-semibold">Фото со звездой</div>
-          <div class="text-sm text-[#6a5fa0]">Реалистичный кадр рядом с любимым артистом или блогером.</div>
-        </div>
+        <div class="text-[#4a3e6e] font-semibold mt-3">Улучшение качества</div>
+        <div class="text-sm text-[#6a5fa0]">Размытые фото становятся чёткими и детализированными за секунды.</div>
       </div>
-      <div class="text-center mt-8">
-        <a href="https://t.me/photmagicbot?start=examples&utm_source=site&utm_medium=cta&utm_campaign=landing" class="btn-magic">Загрузить своё фото</a>
+
+      <!-- B) Восстановление старого фото (мини-слайдер) -->
+      <div class="glass card rounded-2xl p-3 shadow-glow">
+        <div id="restore-compare" class="relative overflow-hidden rounded-xl aspect-[4/3] select-none">
+          <img src="example-restore-before.jpg" alt="Восстановление старого фото — до" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+          <div id="restoreAfter" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+            <img src="example-restore-after.jpg" alt="Восстановление старого фото — после" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+          </div>
+          <div id="restoreHandle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
+            <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
+            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
+          </div>
+        </div>
+        <div class="text-[#4a3e6e] font-semibold mt-3">Восстановление старых фото</div>
+        <div class="text-sm text-[#6a5fa0]">Цвет, текстура и детали бережно восстановлены.</div>
       </div>
+
+      <!-- C) Фото со звездой -->
+      <div class="glass card rounded-2xl p-3 shadow-glow">
+        <img src="example-star.jpg" alt="Фото со звездой — реалистичный совместный кадр" class="rounded-xl mb-3" loading="lazy" />
+        <div class="text-[#4a3e6e] font-semibold">Фото со звездой</div>
+        <div class="text-sm text-[#6a5fa0]">Реалистичный кадр рядом с любимым артистом или блогером.</div>
+      </div>
+
+      <!-- D) Оживление лица (Цветаева) — GIF -->
+      <div class="glass card rounded-2xl p-3 shadow-glow md:col-span-3">
+        <img src="tsvetaeva.gif" alt="Марина Цветаева оживает — пример анимации лица" class="rounded-xl mb-3 w-full" loading="lazy" />
+        <div class="text-[#4a3e6e] font-semibold">Оживление лица</div>
+        <div class="text-sm text-[#6a5fa0]">Лёгкие движения и естественная мимика — как кадр из фильма.</div>
+      </div>
+
     </div>
-  </section>
+
+    <div class="text-center mt-8">
+      <a href="https://t.me/photmagicbot?start=examples&utm_source=site&utm_medium=cta&utm_campaign=landing" class="btn-magic">Загрузить своё фото</a>
+    </div>
+  </div>
+</section>
+
 
   <!-- Features -->
   <section id="features" class="max-w-6xl mx-auto px-4 py-16 md:py-24">
@@ -252,5 +288,39 @@
   </script>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <!-- Scripts for mini-sliders (upscale + restore) -->
+<script>
+function makeSlider(idPrefix){
+  const cmp=document.getElementById(idPrefix+'-compare');
+  if(!cmp)return;
+  const mask=document.getElementById(idPrefix+'After');
+  const handle=document.getElementById(idPrefix+'Handle');
+  function move(x){
+    const r=cmp.getBoundingClientRect();
+    let p=(x-r.left)/r.width;
+    p=Math.max(0,Math.min(1,p));
+    mask.style.clipPath=`inset(0 ${(1-p)*100}% 0 0)`;
+    handle.style.left=`${p*100}%`;
+  }
+  cmp.addEventListener('pointerdown',e=>{
+    cmp.setPointerCapture(e.pointerId);
+    move(e.clientX);
+    const moveEv=ev=>move(ev.clientX);
+    const upEv=ev=>{
+      try{cmp.releasePointerCapture(e.pointerId);}catch(_){}
+      cmp.removeEventListener('pointermove',moveEv);
+      cmp.removeEventListener('pointerup',upEv);
+    };
+    cmp.addEventListener('pointermove',moveEv);
+    cmp.addEventListener('pointerup',upEv);
+  });
+  const r=cmp.getBoundingClientRect();
+  move(r.left+r.width/2);
+  window.addEventListener('resize',()=>{const rr=cmp.getBoundingClientRect();move(rr.left+rr.width/2);});
+}
+makeSlider('upscale');
+makeSlider('restore');
+</script>
+
 </body>
 </html>
