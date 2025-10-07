@@ -3,59 +3,127 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Фото Магия AI — оживить фото, улучшить качество, ИИ-фотошоп, восстановить старые фото</title>
-  <meta name="description" content="Фото Магия AI — Телеграм-бот, который оживляет фото, улучшает фото, делает ИИ-фотошоп и восстанавливает старые фотографии. Бежево-фиолетовый дизайн, простота и вау-результат!" />
-  <meta name="keywords" content="оживить фото онлайн, улучшить качество фото, восстановить фото, реставрация фото, ИИ фотошоп, фото со звездой, анимация фото, нейросеть фото, ии-фотошоп, улучшение чёткости, улучшение качества" />
+
+  <!-- ====== базовые мета ====== -->
+  <title>Фото Магия AI — оживляет, улучшает и восстанавливает фото онлайн | ИИ-фотошоп в Telegram</title>
+  <meta name="description" content="Фото Магия AI — телеграм-бот, который оживляет фото (анимация лица), улучшает фото (повышение чёткости), восстанавливает старые фото и делает ИИ-фотошоп. Бесплатно и без регистрации — результат за минуты." />
+  <meta name="keywords" content="оживить фото онлайн, оживление фото, анимация фото, улучшить фото, улучшение качества фото, повышение чёткости, восстановить старые фото, реставрация фото, ИИ фотошоп, нейросеть для фото, фото со звездой, telegram бот фото" />
   <link rel="canonical" href="http://photmagicai.ru/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <!-- Open Graph -->
+  <meta name="theme-color" content="#9d7aff" />
+  <!-- вставишь когда будут коды -->
+  <!-- <meta name="google-site-verification" content="PASTE_CODE" /> -->
+  <!-- <meta name="yandex-verification" content="PASTE_CODE" /> -->
+
+  <!-- ====== Open Graph / Twitter ====== -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
-  <meta property="og:title" content="Фото Магия AI — оживить и улучшить фото онлайн" />
-  <meta property="og:description" content="Нейросеть оживляет старые фото, улучшает качество и создаёт фото со звёздами. Запусти бота — результат за минуты." />
+  <meta property="og:site_name" content="Фото Магия AI" />
+  <meta property="og:title" content="Фото Магия AI — оживить, улучшить и восстановить фото онлайн" />
+  <meta property="og:description" content="Оживление фото (анимация), улучшение качества и ИИ-фотошоп. Попробуй бесплатно в Telegram-боте." />
   <meta property="og:url" content="http://photmagicai.ru/" />
   <meta property="og:image" content="http://photmagicai.ru/og-cover.jpg?v=3" />
-  <meta property="og:image:secure_url" content="http://photmagicai.ru/og-cover.jpg?v=3" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-
-  <!-- Twitter -->
+  <!-- secure_url добавим после HTTPS -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Фото Магия AI — оживить и улучшить фото" />
-  <meta name="twitter:description" content="Лучшее качество за пару кликов в Telegram." />
+  <meta name="twitter:title" content="Фото Магия AI — оживить, улучшить и восстановить фото" />
+  <meta name="twitter:description" content="Лёгкая анимация лица, повышение чёткости и реставрация. В Telegram-боте за минуты." />
   <meta name="twitter:image" content="http://photmagicai.ru/og-cover.jpg?v=3" />
 
-  <!-- Favicons / PWA -->
+  <!-- ====== Favicon / PWA (по желанию) ====== -->
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Tailwind -->
+  <!-- ====== Tailwind ====== -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            beige: { 50:'#fffaf4',100:'#fdf0e0',200:'#fbe4c9',300:'#f9d9b3' },
-            lilac: { 100:'#ede7ff',200:'#dcd2ff',300:'#c9b9ff',400:'#b49bff',500:'#9d7aff' }
-          }
+      theme: { extend: {
+        colors: {
+          beige: {50:'#fffaf4',100:'#fdf0e0',200:'#fbe4c9',300:'#f9d9b3'},
+          lilac: {100:'#ede7ff',200:'#dcd2ff',300:'#c9b9ff',400:'#b49bff',500:'#9d7aff'}
         }
-      }
+      }}
     }
   </script>
   <style>
-    :root { --g1:#fff8f2; --g2:#f1ebff; --violet:#9d7aff; --violet2:#b49bff; --violet3:#d6c7ff; }
+    :root { --g1:#fff8f2; --g2:#f1ebff; }
     body { background: radial-gradient(1200px 600px at 80% -10%, rgba(212,191,255,.35), transparent 60%), linear-gradient(180deg, var(--g1), var(--g2)); color:#2f2343; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .glass { background: rgba(255,255,255,.6); backdrop-filter: blur(12px); border: 1px solid rgba(180,155,255,.25); }
+    .glass { background: rgba(255,255,255,.6); backdrop-filter: blur(12px); border:1px solid rgba(180,155,255,.25); }
     .title-grad { background: linear-gradient(90deg,#b995ff,#ffb7a1); -webkit-background-clip:text; color:transparent; }
-    .btn-magic { display:inline-block; padding:.95rem 1.4rem; border-radius:1.2rem; color:white; font-weight:700; letter-spacing:.2px; background: linear-gradient(90deg,#a98bff,#c7adff); box-shadow: 0 10px 25px rgba(157,122,255,.45), inset 0 1px 0 rgba(255,255,255,.25); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
-    .btn-magic:hover { transform: translateY(-2px) scale(1.02); box-shadow:0 16px 34px rgba(157,122,255,.6); filter:saturate(1.08); }
-    .chip { display:inline-flex; align-items:center; gap:.4rem; padding:.5rem .8rem; border-radius:999px; background:rgba(180,155,255,.18); color:#4a3e6e; font-weight:600; }
-    .shadow-glow { box-shadow: 0 10px 30px rgba(157,122,255,.25); }
-    .card { border:1px solid rgba(180,155,255,.25); }
+    .btn-magic { display:inline-block; padding:.95rem 1.4rem; border-radius:1.2rem; color:#fff; font-weight:700; background: linear-gradient(90deg,#a98bff,#c7adff); box-shadow:0 10px 25px rgba(157,122,255,.45); transition:.2s; }
+    .btn-magic:hover { transform: translateY(-2px) scale(1.02); box-shadow:0 16px 34px rgba(157,122,255,.6); }
   </style>
+
+  <!-- ====== JSON-LD: Organization / WebSite / Product / FAQ ====== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Фото Магия AI",
+    "url":"http://photmagicai.ru/",
+    "logo":"http://photmagicai.ru/og-cover.jpg",
+    "sameAs":["https://t.me/photmagic","https://t.me/photmagicbot"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"http://photmagicai.ru/",
+    "name":"Фото Магия AI",
+    "inLanguage":"ru-RU",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"http://photmagicai.ru/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Фото Магия AI — бот для оживления и улучшения фотографий",
+    "image":["http://photmagicai.ru/og-cover.jpg"],
+    "description":"ИИ-бот в Telegram: оживляет фото (анимация), улучшает фото (повышение чёткости), восстанавливает старые фото и делает ИИ-фотошоп.",
+    "brand":{"@type":"Brand","name":"Фото Магия AI"},
+    "offers":{
+      "@type":"AggregateOffer",
+      "url":"http://photmagicai.ru/",
+      "priceCurrency":"RUB",
+      "lowPrice":"0",
+      "highPrice":"299",
+      "offerCount":"2",
+      "availability":"https://schema.org/InStock"
+    },
+    "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","ratingCount":"3"},
+    "review":[
+      {"@type":"Review","reviewBody":"Оживила фото бабушки — до слёз. Спасибо!","author":{"@type":"Person","name":"Алина"},"reviewRating":{"@type":"Rating","ratingValue":"5"}},
+      {"@type":"Review","reviewBody":"ИИ-фотошоп аккуратный, лицо остаётся моим. Топ.","author":{"@type":"Person","name":"Кирилл"},"reviewRating":{"@type":"Rating","ratingValue":"5"}},
+      {"@type":"Review","reviewBody":"Фото со звездой выглядит реалистично, друзья поверили :)","author":{"@type":"Person","name":"Мария"},"reviewRating":{"@type":"Rating","ratingValue":"5"}}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Как оживить фото онлайн?","acceptedAnswer":{"@type":"Answer","text":"Загрузите снимок в телеграм-бота Фото Магия AI — бот оживит лицо и создаст естественную анимацию за пару минут."}},
+      {"@type":"Question","name":"Как улучшить качество размытых фото?","acceptedAnswer":{"@type":"Answer","text":"Воспользуйтесь функцией улучшения фото (повышение чёткости, удаление шума, апскейл)."}},
+      {"@type":"Question","name":"Как восстановить старые фото?","acceptedAnswer":{"@type":"Answer","text":"Мы деликатно восстанавливаем цвет, текстуры и детали старых фотографий — результат выглядит естественно."}},
+      {"@type":"Question","name":"Делаете ИИ-фотошоп и фото со звездой?","acceptedAnswer":{"@type":"Answer","text":"Да, у нас аккуратный ИИ-фотошоп и реалистичные кадры со знаменитостью."}}
+    ]
+  }
+  </script>
 </head>
+
 <body>
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-lilac-200">
