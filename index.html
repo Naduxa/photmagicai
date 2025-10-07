@@ -116,63 +116,57 @@
     <h2 class="text-3xl md:text-4xl font-extrabold title-grad text-center">Посмотри, как это выглядит</h2>
     <p class="mt-3 text-center text-[#5b4d86]">Люди возвращают улыбки на старых снимках, делают чёткими размытые фото и создают кадры со звёздами.</p>
 
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      
-      <!-- A) Улучшение качества (мини-слайдер) -->
-      <div class="glass card rounded-2xl p-3 shadow-glow">
-        <div id="upscale-compare" class="relative overflow-hidden rounded-xl aspect-[4/3] select-none">
-          <img src="example-upscale-before.jpg" alt="Улучшение качества — до" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-          <div id="upscaleAfter" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
-            <img src="example-upscale-after.jpg" alt="Улучшение качества — после" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-          </div>
-          <div id="upscaleHandle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
-            <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
-            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
-          </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-6 items-stretch">
+  <!-- A) Улучшение качества -->
+  <article class="glass card rounded-2xl p-3 shadow-glow flex flex-col h-full">
+    <div class="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+      <!-- тот же мини-слайдер, если используешь -->
+      <div id="upscale-compare" class="absolute inset-0 select-none">
+        <img src="example-upscale-before.jpg" class="absolute inset-0 w-full h-full object-cover" alt="До" />
+        <div id="upscaleAfter" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+          <img src="example-upscale-after.jpg" class="absolute inset-0 w-full h-full object-cover" alt="После" />
         </div>
-        <div class="text-[#4a3e6e] font-semibold mt-3">Улучшение качества</div>
-        <div class="text-sm text-[#6a5fa0]">Размытые фото становятся чёткими и детализированными за секунды.</div>
-      </div>
-
-      <!-- B) Восстановление старого фото (мини-слайдер) -->
-      <div class="glass card rounded-2xl p-3 shadow-glow">
-        <div id="restore-compare" class="relative overflow-hidden rounded-xl aspect-[4/3] select-none">
-          <img src="example-restore-before.jpg" alt="Восстановление старого фото — до" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-          <div id="restoreAfter" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
-            <img src="example-restore-after.jpg" alt="Восстановление старого фото — после" class="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-          </div>
-          <div id="restoreHandle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
-            <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
-            <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
-          </div>
-        </div>
-        <div class="text-[#4a3e6e] font-semibold mt-3">Восстановление старых фото</div>
-        <div class="text-sm text-[#6a5fa0]">Цвет, текстура и детали бережно восстановлены.</div>
-      </div>
-
-      <!-- C) Фото со звездой -->
-      <div class="glass card rounded-2xl p-3 shadow-glow">
-        <img src="example-star.jpg" alt="Фото со звездой — реалистичный совместный кадр" class="rounded-xl mb-3" loading="lazy" />
-        <div class="text-[#4a3e6e] font-semibold">Фото со звездой</div>
-        <div class="text-sm text-[#6a5fa0]">Реалистичный кадр рядом с любимым артистом или блогером.</div>
-      </div>
-
-      <!-- D) Семейное оживление — GIF -->
-      <div class="glass card rounded-2xl p-3 shadow-glow">
-        <img src="family.gif" alt="Семейное фото — пример восстановления Фото Магия AI" class="rounded-xl mb-3 w-full" loading="lazy" />
-        <div class="text-[#4a3e6e] font-semibold">Семейное фото</div>
-        <div class="text-sm text-[#6a5fa0]">
-          Восстановленное старое фото — память, которая снова стала живой.  
-          <br />
-          <a href="https://t.me/photmagic" target="_blank"
-             class="inline-flex items-center gap-1 text-lilac-500 font-semibold hover:underline hover:text-lilac-400 transition mt-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
-              <path d="M9.7 16.6 9.5 12l8.3-7-10.8 5.4L2 9.9l20-7.5-5.4 19.8-6.9-5.6Z"/>
-            </svg>
-            t.me/photmagic
-          </a>
+        <div id="upscaleHandle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
+          <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
+          <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
         </div>
       </div>
+    </div>
+    <h3 class="text-[#4a3e6e] font-semibold mt-3">Улучшение качества</h3>
+    <p class="text-sm text-[#6a5fa0]">Размытые фото становятся чёткими и детализированными за секунды.</p>
+    <a href="https://t.me/photmagicbot?start=ex_upscale" class="btn-magic mt-auto self-start">Попробовать</a>
+  </article>
+
+  <!-- B) Восстановление -->
+  <article class="glass card rounded-2xl p-3 shadow-glow flex flex-col h-full">
+    <div class="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+      <div id="restore-compare" class="absolute inset-0 select-none">
+        <img src="example-restore-before.jpg" class="absolute inset-0 w-full h-full object-cover" alt="До" />
+        <div id="restoreAfter" class="absolute inset-0" style="clip-path: inset(0 50% 0 0);">
+          <img src="example-restore-after.jpg" class="absolute inset-0 w-full h-full object-cover" alt="После" />
+        </div>
+        <div id="restoreHandle" class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none">
+          <div class="absolute top-0 bottom-0 w-px bg-white/70"></div>
+          <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white/90 border border-lilac-300 shadow"></div>
+        </div>
+      </div>
+    </div>
+    <h3 class="text-[#4a3e6e] font-semibold mt-3">Восстановление старых фото</h3>
+    <p class="text-sm text-[#6a5fa0]">Цвет, текстура и детали бережно восстановлены.</p>
+    <a href="https://t.me/photmagicbot?start=ex_restore" class="btn-magic mt-auto self-start">Восстановить</a>
+  </article>
+
+  <!-- C) Фото со звездой -->
+  <article class="glass card rounded-2xl p-3 shadow-glow flex flex-col h-full">
+    <div class="relative w-full aspect-[4/3] overflow-hidden rounded-xl">
+      <img src="example-star.jpg" alt="Фото со звездой" class="absolute inset-0 w-full h-full object-cover" />
+    </div>
+    <h3 class="text-[#4a3e6e] font-semibold mt-3">Фото со звездой</h3>
+    <p class="text-sm text-[#6a5fa0]">Реалистичный кадр рядом с любимым артистом или блогером.</p>
+    <a href="https://t.me/photmagicbot?start=ex_star" class="btn-magic mt-auto self-start">Сделать кадр</a>
+  </article>
+</div>
+
 
 
 
