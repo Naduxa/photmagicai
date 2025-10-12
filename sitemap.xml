@@ -5,25 +5,25 @@
 
   <!-- Главная страница -->
   <url>
-    <loc>http://photmagicai.ru/</loc>
+    <loc>https://photmagicai.ru/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>http://photmagicai.ru/og-cover.jpg</image:loc>
+      <image:loc>https://photmagicai.ru/og-cover.jpg</image:loc>
       <image:caption>Фото Магия AI — оживи и улучшай фото как в студии</image:caption>
     </image:image>
   </url>
 
   <!-- Политика конфиденциальности -->
   <url>
-    <loc>http://photmagicai.ru/privacy.html</loc>
+    <loc>https://photmagicai.ru/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Публичная оферта -->
   <url>
-    <loc>http://photmagicai.ru/terms.html</loc>
+    <loc>https://photmagicai.ru/terms.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
